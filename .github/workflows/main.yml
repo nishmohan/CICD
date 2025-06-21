@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+      - dev
+      - prod
 
 jobs:
   deploy:
@@ -15,4 +17,6 @@ jobs:
 
     - name: Show all files
       run: ls -al
+
+    - name: Doing SSH to EC2
     
