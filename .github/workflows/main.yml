@@ -35,6 +35,7 @@ jobs:
             whoami
             pwd
             ls -al
+            chmod 755 "/var/www/html/"
             cp -r "./" "/var/www/html/"
           
             
