@@ -15,18 +15,14 @@ jobs:
 
     - name: Show all files
       run: ls -al
-
-    - name: Doing SSH to EC2
-      uses: appleboy/ssh-action@v1
+    - name: Copy files via SCP
+      uses: actions/scp-action@v0.1.7
       with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}          
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
-          script: | 
-            whoami
-            pwd
-            ls -al
-            mkdir mlal
+          source: "./"
+          target: "./"
             
     
